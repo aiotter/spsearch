@@ -1,6 +1,7 @@
 from typing import Union, Mapping, List
 from ..classes import AttrDict, AttrSeq
 from .habitats import Habitat
+from .threats import Threat
 
 
 class Species:
@@ -101,3 +102,13 @@ class Species:
         """
         data = await self.handler.get(f'/api/v3/habitats/species/id/{self.id}')
         return [Habitat(AttrDict(hab)) for hab in data['result']]
+
+    async def get_threats(self) -> List[Threat]:
+        """Returns information about threats of the species.
+
+        Returns
+        -------
+        List of `Threat`
+        """
+        data = await self.handler.get(f'/api/v3/threats/species/id/{self.id}')
+        return [Threat(AttrDict(th)) for th in data['result']]
