@@ -1,10 +1,12 @@
 from typing import Union, Mapping, List
-from ..classes import AttrDict, AttrSeq
+from ..classes import AttrDict
 from .habitats import Habitat
 from .threats import Threat
+from .conservation_measures import ConservationMeasure
 
 
 class Species:
+    # noinspection PyUnresolvedReferences
     """Represents a species.
     Only id (and maybe name) parameter is available before executing `get_info`.
 
@@ -112,3 +114,13 @@ class Species:
         """
         data = await self.handler.get(f'/api/v3/threats/species/id/{self.id}')
         return [Threat(AttrDict(th)) for th in data['result']]
+
+    async def get_conservation_measures(self) -> List[ConservationMeasure]:
+        """Returns information about conservation measures of the species.
+
+        Returns
+        -------
+        List of `ConservationMeasure`
+        """
+        data = await self.handler.get(f'/api/v3/measures/species/id/{self.id}')
+        return [ConservationMeasure(AttrDict(con)) for con in data['result']]
