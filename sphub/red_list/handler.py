@@ -81,3 +81,22 @@ class RedListApiHandler:
         data = await self.get(f'/api/v3/species/category/{category}')
         return [Species(self, sp['taxonid'], sp['scientific_name']) for sp in data['result']]
 
+    async def species_from_country(self, country: str) -> List[Species]:
+        """Gets a list of species in the country.
+
+        Parameters
+        ----------
+        country: str
+            2-character ISO code of the country.
+            If it is not a ISO code, it will be converted to the code via `pycountry`.
+
+        Returns
+        -------
+        List of :class:`Species`
+        """
+        if len(country) != 2:
+            import pycountry
+            country = pycountry.countries.lookup(country).alpha_2
+        data = await self.get(f'/api/v3/country/getspecies/{country}')
+        return [Species(self, sp['taxonid'], sp['scientific_name']) for sp in data['result']]
+
