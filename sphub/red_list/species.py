@@ -57,9 +57,25 @@ class Species:
         self.category = None
         self.got_info = False
         self.handler = handler
-        self.id = self.taxonid = int(id)
-        self.name = self.scientific_name = name
+        self.taxonid = int(id)
+        self.scientific_name = name
         self.synonyms = synonyms
+
+    @property
+    def id(self):
+        return self.taxonid
+
+    @id.setter
+    def id(self, v):
+        self.taxonid = v
+
+    @property
+    def name(self):
+        return self.scientific_name
+
+    @name.setter
+    def name(self, v):
+        self.scientific_name = v
 
     def __str__(self):
         if self.category:
@@ -86,7 +102,7 @@ class Species:
 
         self.got_info = True
         self._data = result
-        self.name = result['scientific_name']
+        self.scientific_name = result['scientific_name']
 
         for key in result:
             if key == 'class':
