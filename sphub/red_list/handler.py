@@ -63,7 +63,7 @@ class RedListApiHandler:
             async with session.head(f'http://apiv3.iucnredlist.org/api/v3/taxonredirect/{id}',
                                     allow_redirects=True) as resp:
                 url = resp.url
-                assert url.path.startswith('https://www.iucnredlist.org/species/'), 'Species id not found.'
+                assert url.host == 'www.iucnredlist.org', f'Species for id {id} not found.'
         current_id = int(url.path.split('/')[-1])
         species = Species(self, current_id)
         if get_info:
@@ -92,7 +92,7 @@ class RedListApiHandler:
         async with aiohttp.ClientSession() as session:
             async with session.head(f'http://apiv3.iucnredlist.org/api/v3/taxonredirect/{id}',
                                     allow_redirects=False) as resp:
-                assert int(resp.status/100) == 3, 'Species id not found.'
+                assert int(resp.status/100) == 3, f'Species for id {id} not found.'
                 url = resp.headers['Location']
         current_id = int(url.split('/')[-1])
         species = Species(self, current_id)
