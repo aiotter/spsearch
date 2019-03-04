@@ -40,6 +40,66 @@ class RedListApiHandler:
                 assert response.status == 200, f"{response.status}: {response.reason}"
                 return AttrDict(await response.json())
 
+    async def species_from_id_ensured(self, id, get_info=False) -> Species:
+        """Gets species from IUCN taxon ID.
+        Detect the new ID if it has been changed from the given ID.
+
+        Note: Slow but certain way of getting species.
+        Retrieves all redirect until it reaches the final destination url.
+
+        Parameters
+        ----------
+        id: str or int
+            Taxon ID of the species. Old one is accepted.
+        get_info: bool, default False
+            If True, do `get_info` at once.
+            Note that the default is False, as `species_from_id` is mainly used when you need `Species` as fast as you can.
+
+        Returns
+        -------
+        :class:`Species`
+        """
+        async with aiohttp.ClientSession() as session:
+            async with session.head(f'http://apiv3.iucnredlist.org/api/v3/taxonredirect/{id}',
+                                    allow_redirects=True) as resp:
+                url = resp.url
+                assert url.path.startswith('https://www.iucnredlist.org/species/'), 'Species id not found.'
+        current_id = int(url.path.split('/')[-1])
+        species = Species(self, current_id)
+        if get_info:
+            await species.get_info()
+        return species
+
+    async def species_from_id(self, id, get_info=False) -> Species:
+        """Gets species from IUCN taxon ID.
+        Detect the new ID if it has been changed from the given ID.
+
+        Note: Approx. 3x faster than `species_from_id_ensured` but unreliable.
+        Only retrieves the first redirect, so there is a chance of not reaching the final destination url.
+
+        Parameters
+        ----------
+        id: str or int
+            Taxon ID of the species. Old one is accepted.
+        get_info: bool, default False
+            If True, do `get_info` at once.
+            Note that the default is False, as `species_from_id` is mainly used when you need `Species` as fast as you can.
+
+        Returns
+        -------
+        :class:`Species`
+        """
+        async with aiohttp.ClientSession() as session:
+            async with session.head(f'http://apiv3.iucnredlist.org/api/v3/taxonredirect/{id}',
+                                    allow_redirects=False) as resp:
+                assert int(resp.status/100) == 3, 'Species id not found.'
+                url = resp.headers['Location']
+        current_id = int(url.split('/')[-1])
+        species = Species(self, current_id)
+        if get_info:
+            await species.get_info()
+        return species
+
     async def species_from_name(self, name, get_info=True) -> Species:
         """Gets species from scientific name.
 
@@ -47,7 +107,7 @@ class RedListApiHandler:
         ----------
         name: str
             scientific name of the species.
-        get_info: bool
+        get_info: bool, default True
             if True, do `get_info` at once.
 
         Returns
