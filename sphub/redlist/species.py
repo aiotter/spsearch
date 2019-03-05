@@ -1,8 +1,11 @@
-from typing import Union, Mapping, List
+from typing import TYPE_CHECKING, Union, Mapping, List
 from ..classes import AttrDict
 from .habitats import Habitat
 from .threats import Threat
 from .conservation_measures import ConservationMeasure
+
+if TYPE_CHECKING:
+    from .handler import RedListApiHandler
 
 
 class Species:
