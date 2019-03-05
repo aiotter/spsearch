@@ -1,7 +1,7 @@
-from sphub.eol import CypherExecutor
+from biohub.eol import CypherExecutor
 import typing
 import textwrap
-from sphub.classes import AttrDict, AttrSeq
+from biohub.classes import AttrDict, AttrSeq
 from pprint import pprint
 from pathlib import Path
 

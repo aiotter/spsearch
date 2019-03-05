@@ -1,5 +1,5 @@
 import asyncio
-from sphub.redlist import RedListApiHandler
+from biohub.redlist import RedListApiHandler
 
 with open('.redlist.token', encoding='utf-8') as token:
     handler = RedListApiHandler(token)
