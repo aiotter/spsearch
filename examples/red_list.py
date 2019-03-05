@@ -1,7 +1,7 @@
 import asyncio
-from sphub.red_list import RedListApiHandler
+from sphub.redlist import RedListApiHandler
 
-with open('.red_list.token', encoding='utf-8') as token:
+with open('.redlist.token', encoding='utf-8') as token:
     handler = RedListApiHandler(token)
 
 
