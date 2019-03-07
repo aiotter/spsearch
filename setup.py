@@ -1,6 +1,6 @@
 from setuptools import setup
 
 setup(
-    name='biohub',
+    name='spsearch',
     install_requires=['aiohttp']
 )
