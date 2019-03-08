@@ -12,3 +12,8 @@ with (here / dictionary_path).open('rb') as f:
 def convert(name):
     """Convert Japanese name into scientific name"""
     return dictionary[name]
+
+
+if __name__ == '__main__':
+    from sys import argv
+    print(convert(argv[1]))
