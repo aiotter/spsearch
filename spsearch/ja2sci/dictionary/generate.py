@@ -1,3 +1,4 @@
+# noinspection PyPackageRequirements
 import pandas as pd
 import pickle
 from pathlib import Path
