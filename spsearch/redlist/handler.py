@@ -123,6 +123,36 @@ class RedListApiHandler:
             await species.get_info()
         return species
 
+    async def species_from_name(self, name) -> Species:
+        """Gets species from canonical scientific name accepted in IUCN Red List.
+        This method uses the same API endpoint as Species.get_info(),
+        so all the information is already given.
+        No need to run Species.get_info() after this method.
+
+        Parameters
+        ----------
+        name: str
+            canonical scientific name of the species.
+
+        Returns
+        -------
+        :class:`Species`
+        """
+        data = await self.get(f'/api/v3/species/{name}')
+        if not data['result']:
+            raise NotFoundError(f'{name} not found. Is it a scientific name (Latin name)?')
+        result = data['result'][0]
+        species = Species(self, id=result.taxonid, name=result.scientific_name)
+
+        species.got_info = True
+        species._data = result
+        for key in result:
+            if key == 'class':
+                setattr(species, key + '_', result[key])
+            else:
+                setattr(species, key, result[key])
+        return species
+
     async def species_from_category(self, category: str) -> List[Species]:
         """Gets a list of species for the category.
 
