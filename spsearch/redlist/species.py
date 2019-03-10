@@ -1,5 +1,6 @@
-from typing import TYPE_CHECKING, Union, Mapping, List
+from typing import TYPE_CHECKING, Union, Mapping, List, MutableSequence
 from ..classes import AttrDict
+from .classes import CodeHierarchySeq
 from .habitats import Habitat
 from .threats import Threat
 from .conservation_measures import ConservationMeasure
@@ -114,7 +115,7 @@ class Species:
                 setattr(self, key, result[key])
         return AttrDict(result)
 
-    async def get_habitats(self) -> List[Habitat]:
+    async def get_habitats(self) -> MutableSequence[Habitat]:
         """Returns information about habitats of the species.
 
         Returns
@@ -122,7 +123,7 @@ class Species:
         List of `Habitat`
         """
         data = await self.handler.get(f'/api/v3/habitats/species/id/{self.id}')
-        return [Habitat(AttrDict(hab)) for hab in data['result']]
+        return CodeHierarchySeq(Habitat(AttrDict(hab)) for hab in data['result'])
 
     async def get_threats(self) -> List[Threat]:
         """Returns information about threats of the species.
@@ -132,9 +133,9 @@ class Species:
         List of `Threat`
         """
         data = await self.handler.get(f'/api/v3/threats/species/id/{self.id}')
-        return [Threat(AttrDict(th)) for th in data['result']]
+        return CodeHierarchySeq(Threat(AttrDict(th)) for th in data['result'])
 
-    async def get_conservation_measures(self) -> List[ConservationMeasure]:
+    async def get_conservation_measures(self) -> MutableSequence[ConservationMeasure]:
         """Returns information about conservation measures of the species.
 
         Returns
@@ -142,4 +143,4 @@ class Species:
         List of `ConservationMeasure`
         """
         data = await self.handler.get(f'/api/v3/measures/species/id/{self.id}')
-        return [ConservationMeasure(AttrDict(con)) for con in data['result']]
+        return CodeHierarchySeq(ConservationMeasure(AttrDict(con)) for con in data['result'])
