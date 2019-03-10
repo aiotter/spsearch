@@ -37,7 +37,7 @@ class Threat:
 
         # Threat code
         # https://www.iucnredlist.org/resources/threat-classification-scheme
-        self.level = len(self.code.split('.')) - 1
+        self.rank = len(self.code.split('.')) - 1
 
     def __str__(self):
         return f"{self.code}: {self.title}"

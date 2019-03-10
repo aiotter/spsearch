@@ -27,7 +27,7 @@ class ConservationMeasure:
 
         # Conservation measure code
         # https://www.iucnredlist.org/resources/conservation-actions-classification-scheme
-        self.level = len(self.code.split('.')) - 1
+        self.rank = len(self.code.split('.')) - 1
 
     def __str__(self):
         return f"{self.code}: {self.title}"
