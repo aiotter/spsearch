@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Union, Mapping, List, MutableSequence
+from typing import TYPE_CHECKING, Union, Mapping, List
 from ..classes import AttrDict
 from .classes import CodeHierarchySeq
 from .habitats import Habitat
@@ -115,7 +115,7 @@ class Species:
                 setattr(self, key, result[key])
         return AttrDict(result)
 
-    async def get_habitats(self) -> MutableSequence[Habitat]:
+    async def get_habitats(self) -> CodeHierarchySeq:
         """Returns information about habitats of the species.
 
         Returns
@@ -125,7 +125,7 @@ class Species:
         data = await self.handler.get(f'/api/v3/habitats/species/id/{self.id}')
         return CodeHierarchySeq(Habitat(AttrDict(hab)) for hab in data['result'])
 
-    async def get_threats(self) -> List[Threat]:
+    async def get_threats(self) -> CodeHierarchySeq:
         """Returns information about threats of the species.
 
         Returns
@@ -135,7 +135,7 @@ class Species:
         data = await self.handler.get(f'/api/v3/threats/species/id/{self.id}')
         return CodeHierarchySeq(Threat(AttrDict(th)) for th in data['result'])
 
-    async def get_conservation_measures(self) -> MutableSequence[ConservationMeasure]:
+    async def get_conservation_measures(self) -> CodeHierarchySeq:
         """Returns information about conservation measures of the species.
 
         Returns
