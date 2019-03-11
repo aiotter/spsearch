@@ -1,5 +1,5 @@
-from typing import TYPE_CHECKING, Union, Mapping, List
-from ..classes import AttrDict
+from typing import TYPE_CHECKING, Union, Mapping, List, MutableSequence
+from ..classes import AttrDict, AttrSeq
 from .classes import CodeHierarchySeq
 from .habitats import Habitat
 from .threats import Threat
@@ -144,3 +144,22 @@ class Species:
         """
         data = await self.handler.get(f'/api/v3/measures/species/id/{self.id}')
         return CodeHierarchySeq(ConservationMeasure(AttrDict(con)) for con in data['result'])
+
+    async def get_country_occurrence(self) -> MutableSequence[AttrDict]:
+        """Returns list of countries in which the species exists or existed.
+
+        Returns list of AttrDict which has following attributes:
+            code:              Two-character ISO country code
+            country:           Country name
+            presence:          Is/was the species in this area; e.g. Extant, Possibly Extinct
+            origin:            Why/how the species is in this area; e.g. Native, Introduced, Origin Uncertain
+            distribution_code: Different combinations of the presence, origin and seasonality codes are
+                               used to create legends for the final distribution map.
+                               e.g. Native, Introduced, Present - Origin Uncertain
+
+        Returns
+        -------
+        List of `AttrDict`
+        """
+        data = await self.handler.get(f'/api/v3/species/countries/id/{self.id}')
+        return AttrSeq(data['result'])
