@@ -139,7 +139,7 @@ class RedListApiHandler:
         :class:`Species`
         """
         data = await self.get(f'/api/v3/species/{name}')
-        if not data['result']:
+        if 'result' not in data or not data['result']:
             raise NotFoundError(f'{name} not found. Is it a scientific name (Latin name)?')
         result = data['result'][0]
         species = Species(self, id=result.taxonid, name=result.scientific_name)
