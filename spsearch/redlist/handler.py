@@ -123,7 +123,7 @@ class RedListApiHandler:
             await species.get_info()
         return species
 
-    async def species_from_name(self, name) -> Species:
+    async def species_from_canonical_name(self, name) -> Species:
         """Gets species from canonical scientific name accepted in IUCN Red List.
         This method uses the same API endpoint as Species.get_info(),
         so all the information is already given.

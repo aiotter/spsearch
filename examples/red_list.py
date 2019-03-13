@@ -7,7 +7,7 @@ with open('.redlist.token', encoding='utf-8') as token:
 
 async def info(name):
     global handler
-    sp = await handler.species_from_name(name)
+    sp = await handler.species_from_canonical_name(name)
     print(sp)
     # print(sp.category)
     # pprint(sp.__dict__)
