@@ -19,12 +19,6 @@ Red List API returns no result, as it is only referable in `Aonyx cinereus`.
 
 
 ## How to use
-### translator.ja2sci (translate Japanese name into scientific name)
-```python
-from spsearch.translator import ja2sci
-print(ja2sci.convert('ユーラシアカワウソ'))  # Lutra lutra
-```
-
 ### Red List API
 You have to generate your own token [here](http://apiv3.iucnredlist.org/api/v3/token).
 ```python
