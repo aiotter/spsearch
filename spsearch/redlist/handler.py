@@ -1,5 +1,6 @@
 import aiohttp
 from typing import Union, Mapping, Dict, TextIO, List
+from .classes import Synonym
 from ..classes import AttrDict, AttrSeq
 from .exceptions import NotFoundError
 from .species import Species
@@ -118,7 +119,8 @@ class RedListApiHandler:
         if not data['count']:
             raise NotFoundError(f'{name} not found. Is it a scientific name (Latin name)?')
         result = data['result'][0]
-        species = Species(self, id=result.accepted_id, name=result.accepted_name, synonyms=data['result'])
+        synonyms = [Synonym(i) for i in data['result']]
+        species = Species(self, id=result.accepted_id, name=result.accepted_name, synonyms=synonyms)
         if get_info:
             await species.get_info()
         return species

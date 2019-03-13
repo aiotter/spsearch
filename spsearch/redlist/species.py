@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING, Union, Mapping, List, MutableSequence
 from ..classes import AttrDict, AttrSeq
-from .classes import CodeHierarchySeq
+from .classes import CodeHierarchySeq, Synonym
 from .habitats import Habitat
 from .threats import Threat
 from .conservation_measures import ConservationMeasure
@@ -56,7 +56,7 @@ class Species:
     amended_reason
     """
     def __init__(self, handler: 'RedListApiHandler', id: Union[str, int],
-                 name: str = None, synonyms: List[Mapping] = None):
+                 name: str = None, synonyms: List[Synonym] = None):
         self._data = None
         self.category = None
         self.got_info = False

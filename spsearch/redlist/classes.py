@@ -1,5 +1,16 @@
 from typing import Iterable, List, Union
 from itertools import dropwhile, zip_longest
+from ..classes import AttrDict
+
+
+class Synonym(AttrDict):
+    __slots__ = ["accepted_id", "accepted_name", "authority", "synonym", "syn_authority"]
+
+    def __str__(self):
+        return f"{self.synonym}: {self.syn_authority}"
+
+    def __repr__(self):
+        return f"<Synonym for {self.accepted_name}: {self.synonym}>"
 
 
 class CodeHierarchySeq:
