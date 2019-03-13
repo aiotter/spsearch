@@ -102,6 +102,24 @@ class RedListApiHandler:
         return species
 
 
+    async def species_from_name(self, name) -> Species:
+        """Gets species from scientific name and synonym.
+
+        Parameters
+        ----------
+        name: str
+            scientific name of the species.
+
+        Returns
+        -------
+        :class:`Species`
+        """
+        try:
+            return await self.species_from_synonym(name, get_info=True)
+        except NotFoundError:
+            return await self.species_from_canonical_name(name)
+
+
     async def species_from_synonym(self, name, get_info=True) -> Species:
         """Gets species from canonical scientific name and synonym.
 
