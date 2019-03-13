@@ -101,6 +101,9 @@ class Species:
         `AttrDict`
             The information you got.
         """
+        if self.got_info:
+            return AttrDict(self._data)
+
         data = await self.handler.get(f'/api/v3/species/id/{self.id}')
         result = data['result'][0]
 
