@@ -101,8 +101,11 @@ class RedListApiHandler:
             await species.get_info()
         return species
 
+
     async def species_from_synonym(self, name, get_info=True) -> Species:
-        """Gets species from scientific name and synonym.
+        """Gets species from canonical scientific name and synonym.
+
+        Note that if there is no synonym, this will raise NotFoundError.
 
         Parameters
         ----------
