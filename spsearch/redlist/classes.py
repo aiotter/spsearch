@@ -53,6 +53,9 @@ class CodeHierarchySeq:
     def __repr__(self):
         return repr(self._list)
 
+    def __bool__(self):
+        return bool(self._list)
+
     def codes(self) -> List[int]:
         """Returns the code under this CodeHierarchy
 
