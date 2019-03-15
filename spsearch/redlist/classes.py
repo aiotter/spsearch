@@ -15,7 +15,8 @@ class Synonym(AttrDict):
 
 class CodeHierarchySeq:
     def __init__(self, *args, codepoint: str ='', **kwargs):
-        self._list = list(*args, **kwargs)
+        # Correct the order (from 1.5 -> 12.5 -> 3.6 to 1.5 -> 3.6 -> 12.5)
+        self._list = sorted(list(*args, **kwargs), key=lambda x: [int(i) for i in x.code.split('.')])
         self.codepoint = str(codepoint)
 
     def __iter__(self):
