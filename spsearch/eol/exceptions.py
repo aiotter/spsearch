@@ -1,2 +1,0 @@
-class UnparsableDataException(Exception):
-    pass

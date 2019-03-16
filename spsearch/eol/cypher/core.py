@@ -1,8 +1,7 @@
 import aiohttp
 import typing
 import itertools
-from ..classes import AttrDict, AttrSeq
-from .exceptions import UnparsableDataException
+from spsearch.classes import AttrDict
 import io
 
 endpoint = "https://eol.org/service/cypher"
