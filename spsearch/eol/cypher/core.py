@@ -3,6 +3,7 @@ import typing
 import itertools
 from spsearch.classes import AttrDict
 import io
+import asyncio
 
 endpoint = "https://eol.org/service/cypher"
 
@@ -34,10 +35,11 @@ class CypherExecutor:
             yield result
             count += 1
 
-    async def execute(self, query: str, items: int = 100, chunk: int = 100) -> AttrDict:
+    async def execute(self, query: str, items: int =100, chunk: int =100, interval: int =1) -> AttrDict:
         results = []
         async for chunk in self._paginate(query, items=items, chunk=chunk):
             results.append(chunk)
+            await asyncio.sleep(interval)
 
         expected_keys = ("columns", "data")
         if len(results) == 1:
