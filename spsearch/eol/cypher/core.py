@@ -28,9 +28,9 @@ class CypherExecutor:
     async def _paginate(self, query: str, items: int, chunk: int) -> typing.AsyncGenerator[dict, None]:
         count = 0
         while count * chunk < items:
-            query += f'\nSKIP {count*chunk} LIMIT {chunk if items >= chunk else items}'
+            pagenated_query = query + f'\nSKIP {count*chunk} LIMIT {chunk if items >= chunk else items}'
             # print(query)
-            result = await self._execute_query(query)
+            result = await self._execute_query(pagenated_query)
             yield result
             count += 1
 
@@ -44,7 +44,7 @@ class CypherExecutor:
             return AttrDict(results[0])
         elif all(all(k in r for r in results) for k in expected_keys):
             # ensure each result has expected_keys
-            if len(set(r['columns'] for r in results)) == 1:
+            if len(set(tuple(r['columns']) for r in results)) == 1:
                 # ensure each result has the same columns
                 return AttrDict(**{
                     'columns': results[0]['columns'],
