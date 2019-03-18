@@ -1,1 +1,1 @@
-from .core import get, search
+from .core import search, pages
