@@ -172,6 +172,8 @@ class RedListApiHandler:
         for key in result:
             if key == 'class':
                 setattr(species, key + '_', result[key])
+            elif key == 'authority':
+                pass
             else:
                 setattr(species, key, result[key])
         return species

@@ -81,6 +81,18 @@ class Species:
     def name(self, v):
         self.scientific_name = v
 
+    @property
+    def authority(self):
+        """
+        self.authority sometimes like '(Linnaeus, 1758)' and other times like 'Bennett, 1833'
+        This property wraps the attribute to return canonical form of authority without any brackets.
+        """
+        authority = self._data['authority']
+        if authority.startswith('(') and authority.endswith(')'):
+            return authority.replace('(', '').replace(')', '')
+        else:
+            return authority
+
     def __str__(self):
         if self.category:
             return f"[{self.category}]{self.name}" if self.name else f"[{self.category}]NameUnknown(id={self.id})"
@@ -114,6 +126,8 @@ class Species:
         for key in result:
             if key == 'class':
                 setattr(self, key + '_', result[key])
+            if key == 'authority':
+                pass
             else:
                 setattr(self, key, result[key])
         return AttrDict(result)
