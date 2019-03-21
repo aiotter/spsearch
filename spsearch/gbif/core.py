@@ -5,7 +5,6 @@ from typing import AsyncGenerator, List
 
 base_url = URL('http://api.gbif.org/v1/')
 
-
 async def _get(url: URL, paging =False, chunk_size: int =100) -> AsyncGenerator[None, AttrDict]:
     data = {}
     offset = 0
@@ -24,22 +23,35 @@ async def _get(url: URL, paging =False, chunk_size: int =100) -> AsyncGenerator[
             break
 
 
-async def get_synonyms(name) -> List[str]:
-    url = (base_url / 'species').with_query(name=name)
-    results = []
-    async for datum in _get(url):
-        nub = datum['nubKey']
-        results.append(datum['canonicalName'])
-        break
+class Species:
+    def __init__(self, nub: int, name: str =None):
+        self.nub = nub
+        self.name = name
 
     # noinspection PyUnboundLocalVariable
-    url = base_url / f'species/{nub}/synonyms'
-    async for datum in _get(url, paging=True):
-        results.append(datum['canonicalName'])
-    return results
+    @classmethod
+    async def from_name(cls, name: str) -> 'Species':
+        url = (base_url / 'species').with_query(name=name)
+        async for datum in _get(url):
+            nub = datum['nubKey']
+            name = datum['canonicalName']
+            break
+        return cls(nub, name)
+
+    async def synonyms(self):
+        url = base_url / f'species/{self.nub}/synonyms'
+        results = []
+        async for datum in _get(url, paging=True):
+            if not results:
+                results.append(datum['species'])
+            results.append(datum['canonicalName'])
+        return results or [self.name] if self.name else []
 
 
 if __name__ == '__main__':
     from sys import argv
     import asyncio
-    print(asyncio.run(get_synonyms(argv[1])))
+    async def test():
+        sp = await Species.from_name(argv[1])
+        print(await sp.synonyms())
+    asyncio.run(test())
