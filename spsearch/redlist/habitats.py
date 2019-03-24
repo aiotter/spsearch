@@ -20,14 +20,14 @@ class Habitat:
     majorimportance
     """
 
-    def __init__(self, data: Mapping[str, str]):
+    def __init__(self, code: str =None, habitat: str =None,  data: Mapping[str, str] =None):
         self._data = data
 
-        self.code = data['code']  # habitat code
-        self.habitat = data['habitat']  # habitat
-        self.suitability = data['suitability']
-        self.season = data['season']
-        self.majorimportance = data['majorimportance']
+        self.code = code or data and data['code']  # habitat code
+        self.habitat = habitat or data and data['habitat']  # habitat
+        self.suitability = data and data['suitability']
+        self.season = data and data['season']
+        self.majorimportance = data and data['majorimportance']
 
         # Habitat code
         # https://www.iucnredlist.org/resources/habitat-classification-scheme

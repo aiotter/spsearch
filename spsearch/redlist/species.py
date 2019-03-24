@@ -140,7 +140,7 @@ class Species:
         List of `Habitat`
         """
         data = await self.handler.get(f'/api/v3/habitats/species/id/{self.id}')
-        return CodeHierarchySeq(Habitat(AttrDict(hab)) for hab in data['result'])
+        return CodeHierarchySeq(Habitat(data=AttrDict(hab)) for hab in data['result'])
 
     async def get_threats(self) -> CodeHierarchySeq:
         """Returns information about threats of the species.
@@ -150,7 +150,7 @@ class Species:
         List of `Threat`
         """
         data = await self.handler.get(f'/api/v3/threats/species/id/{self.id}')
-        return CodeHierarchySeq(Threat(AttrDict(th)) for th in data['result'])
+        return CodeHierarchySeq(Threat(data=AttrDict(th)) for th in data['result'])
 
     async def get_conservation_measures(self) -> CodeHierarchySeq:
         """Returns information about conservation measures of the species.
@@ -160,7 +160,7 @@ class Species:
         List of `ConservationMeasure`
         """
         data = await self.handler.get(f'/api/v3/measures/species/id/{self.id}')
-        return CodeHierarchySeq(ConservationMeasure(AttrDict(con)) for con in data['result'])
+        return CodeHierarchySeq(ConservationMeasure(data=AttrDict(con)) for con in data['result'])
 
     async def get_country_occurrence(self) -> MutableSequence[AttrDict]:
         """Returns list of countries in which the species exists or existed.

@@ -100,4 +100,27 @@ class CodeHierarchySeq:
             codes.append(int(next(deeper_code)))
         return sorted(list(set(codes)))
 
+    def iterate_with_rank0(self):
+        """Generator to iterate the hierarchy with zero-rank codepoint.
+        e.g. CodeHierarchySeq([
+            <Threat 1: None>,
+            <Threat 1.2: Commercial & industrial areas>,
+            <Threat 1.3: Tourism & recreation areas>,
+            <Threat 2: None>,
+            <Threat 2.4: Marine & freshwater aquaculture>,
+            ... ])
 
+        Note that zero-rank codepoint has no title. Although obj.translate() may work.
+
+        Returns
+        -------
+        Generator
+        """
+        # 自身が何のコンテナなのか判別し、ラップしているクラスを cls に代入
+        cls = self.slice(0).__class__
+        i = '0'
+        for obj in self:
+            if i != obj.code.split('.')[0]:
+                yield cls(obj.code.split('.')[0])
+            yield obj
+            i = obj.code.split('.')[0]

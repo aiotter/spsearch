@@ -24,17 +24,17 @@ class Threat:
     invasive
     """
 
-    def __init__(self, data: Mapping[str, str]):
+    def __init__(self, code: str =None, title: str =None, data: Mapping[str, str] =None):
         self._data = data
 
-        self.code = data['code']  # threat code
-        self.title = data['title']  # threat type
+        self.code = code or data and data['code']  # threat code
+        self.title = title or data and data['title']  # threat type
         self.threat = self.title  # alias for title
-        self.timing = data['timing']
-        self.scope = data['scope']
-        self.severity = data['severity']
-        self.score = data['score']
-        self.invasive = data['invasive']
+        self.timing = data and data['timing']
+        self.scope = data and data['scope']
+        self.severity = data and data['severity']
+        self.score = data and data['score']
+        self.invasive = data and data['invasive']
 
         # Threat code
         # https://www.iucnredlist.org/resources/threat-classification-scheme

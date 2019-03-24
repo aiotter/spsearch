@@ -19,11 +19,11 @@ class ConservationMeasure:
         alias for title
     """
 
-    def __init__(self, data: Mapping[str, str]):
+    def __init__(self, code: str =None, title: str =None, data: Mapping[str, str] =None):
         self._data = data
 
-        self.code = data['code']  # Conservation measure code
-        self.title = data['title']  # Conservation measure type
+        self.code = code or data and data['code']  # Conservation measure code
+        self.title = title or data and data['title']  # Conservation measure type
         self.measure = self.title  # alias for title
 
         # Conservation measure code
