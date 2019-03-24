@@ -1,7 +1,8 @@
 from typing import Mapping
 from .translator import Translator
+from pathlib import Path
 
-translator = Translator('./dictionary/threats/')
+translator = Translator(Path(__file__).parent/'dictionary/threats/')
 
 
 class Threat:
