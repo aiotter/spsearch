@@ -1,0 +1,143 @@
+1	Forest	森林
+1.1	Forest – Boreal	北方林(タイガ)
+1.2	Forest - Subarctic	北極圏の亜寒帯林
+1.3	Forest – Subantarctic	南極圏の亜寒帯林
+1.4	Forest – Temperate	温帯林
+1.5	Forest – Subtropical/tropical dry	亜熱帯の乾燥した森林
+1.6	Forest – Subtropical/tropical moist lowland	低地の亜熱帯雨林
+1.7	Forest – Subtropical/tropical mangrove vegetation above high tide level	マングローブ林 (満潮時に水面より上にある部分)
+1.8	Forest – Subtropical/tropical swamp	亜熱帯の沼地
+1.9	Forest – Subtropical/tropical moist montane	亜熱帯の湿潤な山地上の森林
+
+2	Savanna	サバナ
+2.1	Savanna - Dry	乾燥サバナ
+2.2	Savanna - Moist	湿潤サバナ
+
+3	Shrubland	灌木地
+3.1	Shrubland – Subarctic	北極圏の灌木地
+3.2	Shrubland – Subantarctic	南極圏の灌木地
+3.3	Shrubland – Boreal	亜寒帯の灌木地
+3.4	Shrubland – Temperate	温帯の灌木地
+3.5	Shrubland – Subtropical/tropical dry	熱帯/亜熱帯の乾燥した灌木地
+3.6	Shrubland – Subtropical/tropical moist	熱帯/亜熱帯の湿潤な灌木地
+3.7	Shrubland – Subtropical/tropical high altitude	熱帯/亜熱帯の標高の高い灌木地
+3.8	Shrubland – Mediterranean-type shrubby vegetation	地中海性の灌木地
+
+4	Grassland	草原
+4.1	Grassland – Tundra	ツンドラ
+4.2	Grassland – Subarctic	北極圏の草原
+4.3	Grassland – Subantarctic	南極圏の草原
+4.4	Grassland – Temperate	温帯の草原
+4.5	Grassland – Subtropical/tropical dry	熱帯/亜熱帯の乾燥した草原
+4.6	Grassland – Subtropical/tropical seasonally wet/flooded	熱帯/亜熱帯の季節的に湿潤となる/氾濫原となる草原
+4.7	Grassland – Subtropical/tropical high altitude	熱帯/亜熱帯の高地にある草原
+
+5	Wetlands (inland)	内陸の水辺
+5.1	Wetlands (inland) – Permanent rivers/streams/creeks (includes waterfalls)	河川 (滝を含む)
+5.2	Wetlands (inland) – Seasonal/intermittent/irregular rivers/streams/creeks	かれ川
+5.3	Wetlands (inland) – Shrub dominated wetlands	灌木が支配する湿地
+5.4	Wetlands (inland) – Bogs, marshes, swamps, fens, peatlands	泥沼
+5.5	Wetlands (inland) – Permanent freshwater lakes (over 8 ha)	8 ヘクタール以上の淡水湖
+5.6	Wetlands (inland) – Seasonal/intermittent freshwater lakes (over 8 ha)	8 ヘクタール以上の淡水湖 (季節的に枯れる)
+5.7	Wetlands (inland) – Permanent freshwater marshes/pools (under 8 ha)	8 ヘクタール未満の淡水の湿地・水たまり
+5.8	Wetlands (inland) – Seasonal/intermittent freshwater marshes/pools (under 8 ha)	8 ヘクタール未満の淡水の沼地 (季節的に乾燥する)
+5.9	Wetlands (inland) – Freshwater springs and oases	淡水の泉
+5.10	Wetlands (inland) – Tundra wetlands (inc. pools and temporary waters from snowmelt)	ツンドラの湿地 (雪解け水による一時的な水たまりや水流を含む)
+5.11	Wetlands (inland) – Alpine wetlands (inc. temporary waters from snowmelt)	山地の湿地 (雪解け水による一時的な水流を含む)
+5.12	Wetlands (inland) – Geothermal wetlands	地熱による湿地
+5.13	Wetlands (inland) – Permanent inland deltas	内陸の三角州
+5.14	Wetlands (inland) – Permanent saline, brackish or alkaline lakes	塩湖
+5.15	Wetlands (inland) – Seasonal/intermittent saline, brackish or alkaline lakes and flats	塩湖 (季節的に枯れる)
+5.16	Wetlands (inland) – Permanent saline, brackish or alkaline marshes/pools	鹹水 (塩を含む水) の沼地
+5.17	Wetlands (inland) – Seasonal/intermittent saline, brackish or alkaline marshes/pools	鹹水 (塩を含む水) の沼地 (季節的に枯れる)
+5.18	Wetlands (inland) – Karst and other subterranean hydrological systems (inland)	カルストなどの地中の水系 (内陸)
+
+6	Rocky Areas (e.g., inland cliffs, mountain peaks)	山地 (内陸の崖や山脈)
+
+7	Caves & Subterranean Habitats (non-aquatic)	洞窟と地下水流 (陸上)
+7.1	Caves and Subterranean Habitats (non-aquatic) – Caves	洞窟
+7.2	Caves and Subterranean Habitats (non-aquatic) – Other subterranean habitats	その他の地下の生息環境
+
+8	Desert	砂漠
+8.1	Desert – Hot	高温砂漠
+8.2	Desert – Temperate	温暖な砂漠
+8.3	Desert – Cold	低温砂漠
+
+9	Marine Neritic	岸の近くの海
+9.1	Marine Neritic – Pelagic	遠洋
+9.2	Marine Neritic – Subtidal rock and rocky reefs	潮下帯の岩や暗礁
+9.3	Marine Neritic – Subtidal loose rock/pebble/gravel	潮間帯の小石・礫
+9.4	Marine Neritic – Subtidal sandy	潮間帯の砂地
+9.5	Marine Neritic – Subtidal sandy-mud	潮間帯の砂泥
+9.6	Marine Neritic – Subtidal muddy	潮間帯の泥沼
+9.7	Marine Neritic – Macroalgal/kelp	大型藻・昆布
+9.8	Marine Neritic – Coral Reef	サンゴ礁
+9.8.1	Outer reef channel	孤立した岩礁帯
+9.8.2	Back slope	岸から海への海斜面
+9.8.3	Foreslope (outer reef slope)	岩礁から岸への海斜面
+9.8.4	Lagoon	潟湖
+9.8.5	Inter-reef soft substrate	岩礁の間の柔らかい水底
+9.8.6	Inter-reef rubble substrate	岩礁の間の瓦礫から成る水底
+9.9	Seagrass (Submerged)	水面下の海藻
+9.10	Estuaries	三角江 (エスチュアリー)
+
+10	Marine Oceanic	大洋
+10.1	Epipelagic (0–200 m)	表海水層 (水深 0 - 200 m)
+10.2	Mesopelagic (200–1,000 m)	中深海水層 (水深 200 - 1000 m)
+10.3	Bathypelagic (1,000–4,000 m)	漸深層 (水深 1000 - 4000 m)
+10.4	Abyssopelagic (4,000–6,000 m)	深海 (水深 4000 - 6000 m)
+
+11	Marine Deep Ocean Floor (Benthic and Demersal)	大洋の水底 (底生性)
+11.1	Continental Slope/Bathyl Zone (200–4,000 m)	大陸棚/漸深海帯の水底 (水深 200 - 4000 m)
+11.1.1	Hard Substrate	硬い水底
+11.1.2	Soft Substrate	柔らかい水底
+11.2	Abyssal Plain (4,000–6,000 m)	深海の平原 (水深 4000 - 6000 m)
+11.3	Abyssal Mountain/Hills (4,000–6,000 m)	深海の山地・丘 (水深 4000 - 6000 m)
+11.4	Hadal/Deep Sea Trench (>6,000 m)	超深海帯・深い海溝 (水深 6000 m 以下)
+11.5	Seamount	海山
+11.6	Deep Sea Vents (Rifts/Seeps)	熱水噴出孔
+
+12	Marine Intertidal	海洋性の潮間帯
+12.1	Rocky Shoreline	岩石海岸
+12.2	Sandy Shoreline and/or Beaches, Sand Bars, Spits, etc.	砂浜海岸
+12.3	Shingle and/or Pebble Shoreline and/or Beaches	小石や瓦礫から成る海岸
+12.4	Mud Shoreline and Intertidal Mud Flats	泥状の海岸
+12.5	Salt Marshes (Emergent Grasses)	海水の沼地 (抽水植物)
+12.6	Tidepools	潮溜まり
+12.7	Mangrove Submerged Roots	マングローブの水没した根
+
+13	Marine Coastal/Supratidal	海岸/上潮間帯
+13.1	Sea Cliffs and Rocky Offshore Islands	海食崖
+13.2	Coastal Caves/Karst	海岸の洞窟・カルスト
+13.3	Coastal Sand Dunes	海岸砂丘
+13.4	Coastal Brackish/Saline Lagoons/Marine Lakes	汽水域の潟湖/海水湖
+13.5	Coastal Freshwater Lakes	海岸の淡水湖
+
+14	Artificial - Terrestrial	人工の陸地
+14.1	Arable Land	農地
+14.2	Pastureland	牧草地
+14.3	Plantations	プランテーション (大規模な単一農耕地)
+14.4	Rural Gardens	田舎の庭園
+14.5	Urban Areas	都会
+14.6	Subtropical/Tropical Heavily Degraded Former Forest	亜熱帯/熱帯のひどく衰退した森林
+
+15	Artificial - Aquatic	人工の水辺
+15.1	Water Storage Areas [over 8 ha]	8 ヘクタール以上の貯水池
+15.2	Ponds [below 8 ha]	8 ヘクタール以上の人工池
+15.3	Aquaculture Ponds	養殖池
+15.4	Salt Exploitation Sites	塩田
+15.5	Excavations (open)	開削された土地
+15.6	Wastewater Treatment Areas	下水処理場
+15.7	Irrigated Land [includes irrigation channels]	灌漑地
+15.8	Seasonally Flooded Agricultural Land	氾濫原の農地
+15.9	Canals and Drainage Channels, Ditches	運河や水路
+15.10	Karst and Other Subterranean Hydrological Systems [human-made]	人工のカルストやその他の地中海性の水系
+15.11	Marine Anthropogenic Structures	海洋の人工建築物
+15.12	Mariculture Cages	栽培漁業のケージ
+15.13	Mari/Brackish-culture Ponds	栽培漁業/汽水域漁業の人工池
+
+16	Introduced Vegetation	人為的に導入された植生
+
+17	Other	その他
+
+18	Unknown	不明
