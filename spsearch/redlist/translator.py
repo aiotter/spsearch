@@ -17,10 +17,10 @@ class Translator:
             dir_set = Path(dir_set)
         for p in dir_set.glob('*.csv'):
             with p.open('r', encoding='utf-8') as f:
-                reader = csv.reader(f)
-                self.dictionary[p.stem] = {row[0]: row[1] for row in reader}
+                reader = csv.reader(f, delimiter='\t')
+                self.dictionary[p.stem] = {row[0]: row[2] for row in reader}
 
-    def translate(self, lang: str, code: str) -> str:
+    def translate(self, lang: str, code: str) -> Union[str, None]:
         """Translate the code.
 
         Parameters
@@ -35,4 +35,7 @@ class Translator:
         -------
         str
         """
-        return self.dictionary[lang][code]
+        try:
+            return self.dictionary[lang][code]
+        except KeyError:
+            return None
