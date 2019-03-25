@@ -1,0 +1,125 @@
+1	Residential & commercial development	住宅地と経済の発展
+1.1	Housing & urban areas	住宅地・都市
+1.2	Commercial & industrial areas	産業区域
+1.3	Tourism & recreation areas	観光地
+
+2	Agriculture & aquaculture	農林水産業
+2.1	Annual & perennial non-timber crops	一年性・多年生の草本農作物
+2.1.1	Shifting agriculture	移動農業
+2.1.2	Small-holder farming	小規模農業
+2.1.3	Agro-industry farming	農産業 (アグロインダストリー)
+2.1.4	Scale Unknown/Unrecorded	規模不明
+2.2	Wood & pulp plantations	木材・パルプのための農園
+2.2.1	Small-holder plantations	小規模農業
+2.2.2	Agro-industry plantations	農産業 (アグロインダストリー)
+2.2.3	Scale Unknown/Unrecorded	規模不明
+2.3	Livestock farming & ranching	畜産経営
+2.3.1	Nomadic grazing	遊牧
+2.3.2	Small-holder grazing, ranching or farming	小規模の放牧
+2.3.3	Agro-industry grazing, ranching or farming	農産業としての放牧
+2.3.4	Scale Unknown/Unrecorded	規模不明
+2.4	Marine & freshwater aquaculture	水産業
+2.4.1	Subsistence/artisanal aquaculture	漁師による漁業
+2.4.2	Industrial aquaculture	工業型水産業
+2.4.3	Scale Unknown/Unrecorded	規模不明
+
+3	Energy production & mining	発電・掘削
+3.1	Oil & gas drilling	石油・天然ガス井の掘削
+3.2	Mining & quarrying	採掘・採石
+3.3	Renewable energy	再生可能エネルギー
+
+4	Transportation & service corridors	輸送・サービス提供者
+4.1	Roads & railroads	道路・鉄道路線
+4.2	Utility & service lines	ライフライン
+4.3	Shipping lanes	海路
+4.4	Flight paths	空路
+
+5	Biological resource use	生物資源の利用
+5.1	Hunting & collecting terrestrial animals	陸生動物の狩猟・採集
+5.1.1	Intentional use (species being assessed is the target)	(問題の種を対象とした狩猟による) 意図的な使用
+5.1.2	Unintentional effects (species being assessed is not the target)	(問題の種を対象としない狩猟の) 意図しない影響
+5.1.3	Persecution/control	迫害・管理
+5.1.4	Motivation Unknown/Unrecorded	動機が不明・記録なし
+5.2	Gathering terrestrial plants	陸生植物の採取
+5.2.1	Intentional use (species being assessed is the target)	(問題の種を対象とした採取による) 意図的な使用
+5.2.2	Unintentional effects (species being assessed is not the target)	(問題の種を対象としない狩猟の) 意図しない影響
+5.2.3	Persecution/control	迫害・管理
+5.2.4	Motivation Unknown/Unrecorded	動機が不明・記録なし
+5.3	Logging & wood harvesting	伐採・木材収穫
+5.3.1	Intentional use: subsistence/small scale (species being assessed is the target [harvest]	(問題の種を対象とした採取による) 意図的な使用: 必要量のみの小規模
+5.3.2	Intentional use: large scale (species being assessed is the target)[harvest]	(問題の種を対象とした採取による) 意図的な使用: 大規模
+5.3.3	Unintentional effects: subsistence/small scale (species being assessed is not the target)[harvest]	(問題の種を対象としない採取の) 意図しない影響: 必要量のみの小規模
+5.3.4	Unintentional effects: large scale (species being assessed is not the target)[harvest]	(問題の種を対象としない採取の) 意図しない影響: 大規模
+5.3.5	Motivation Unknown/Unrecorded	動機が不明・記録なし
+5.4	Fishing & harvesting aquatic resources	水産資源の獲得
+5.4.1	Intentional use: subsistence/small scale (species being assessed is the target)[harvest]	(問題の種を対象とした採取による) 意図的な使用: 必要量のみの小規模
+5.4.2	Intentional use: large scale (species being assessed is the target)[harvest]	(問題の種を対象とした採取による) 意図的な使用: 大規模
+5.4.3	Unintentional effects: subsistence/small scale (species being assessed is not the target)[harvest]	(問題の種を対象としない採取の) 意図しない影響: 必要量のみの小規模
+5.4.4	Unintentional effects: large scale (species being assessed is not the target)[harvest]	(問題の種を対象としない採取の) 意図しない影響: 大規模
+5.4.5	Persecution/control	迫害・管理
+5.4.6	Motivation Unknown/Unrecorded	動機が不明・記録なし
+
+6	Human intrusions & disturbance	ヒトによる侵入・妨害
+6.1	Recreational activities	娯楽
+6.2	War, civil unrest & military exercises	戦争・紛争・軍事訓練
+6.3	Work & other activities	仕事やその他の活動
+
+7	Natural system modifications	自然環境の改変
+7.1	Fire & fire suppression	火事および消火活動
+7.1.1	Increase in fire frequency/intensity	火事の頻度・規模の増加
+7.1.2	Suppression in fire frequency/intensity	火事の頻度・規模の減少
+7.1.3	Trend Unknown/Unrecorded	火事の頻度・規模の増減が不明/記録なし
+7.2	Dams & water management/use	ダムと治水、水源利用
+7.2.1	Abstraction of surface water (domestic use)	表層水の採水 (家庭用水)
+7.2.2	Abstraction of surface water (commercial use)	表層水の採水 (商業用水)
+7.2.3	Abstraction of surface water (agricultural use)	表層水の採水 (農業用水)
+7.2.4	Abstraction of surface water (unknown use)	表層水の採水 (用途不明)
+7.2.5	Abstraction of ground water (domestic use)	地下水の採水 (家庭用水)
+7.2.6	Abstraction of ground water (commercial use)	地下水の採水 (家庭用水)
+7.2.7	Abstraction of ground water (agricultural use)	地下水の採水 (家庭用水)
+7.2.8	Abstraction of ground water (unknown use)	地下水の採水 (家庭用水)
+7.2.9	Small dams	小さなダム
+7.2.10	Large dams	大きなダム
+7.2.11	Dams (size unknown)	ダム (規模不明)
+7.3	Other ecosystem modifications	その他の生態系改変
+
+8	Invasive & other problematic species, genes & diseases	侵略的な/問題のある種、遺伝子、疾病
+8.1	Invasive non-native/alien species/diseases	侵略的な外来種・疾病
+8.1.1	Unspecified species	未特定の種
+8.1.2	Named species	特定の種
+8.2	Problematic native species/diseases	問題のある在来種
+8.2.1	Unspecified species	未特定の種
+8.2.2	Named species	特定の種
+8.3	Introduced genetic material	外来の遺伝物質
+8.4	Problematic species/diseases of unknown origin	由来が判明していない問題のある種・疾病
+8.4.1	Unspecified species	未特定の種
+8.4.2	Named species	特定の種
+8.5	Viral/prion-induced diseases	ウイルス性疾患・プリオン病
+8.5.1	Unspecified "species" (disease)	未特定の「種」(疾病)
+8.5.2	Named "species" (disease)	特定の「種」(疾病)
+8.6	Diseases of unknown cause	由来不明の疾病
+
+9	Pollution	汚染
+9.1	Domestic & urban waste water	家庭用廃水・都市廃水
+9.1.1	Sewage	下水
+9.1.2	Run-off	汚染水の流出
+9.1.3	Type Unknown/Unrecorded	廃水の種類が不明・記録なし
+9.2	Industrial & military effluents	産業廃水・軍事廃水
+9.2.1	Oil spills	石油の流出
+9.2.2	Seepage from mining	油井からの漏出
+9.2.3	Type Unknown/Unrecorded	廃水の種類が不明・記録なし
+
+10	Geological events	地質学的イベント
+10.1	Volcanoes	火山の噴火
+10.2	Earthquakes/tsunamis	地震・津波
+10.3	Avalanches/landslides	雪崩・土砂災害
+
+11	Climate change & severe weather	気象変動・異常気象
+11.1	Habitat shifting & alteration	生息域の移動
+11.2	Droughts	干ばつ
+11.3	Temperature extremes	異常な気温上昇・下降
+11.4	Storms & flooding	嵐・洪水
+11.5	Other impacts	その他の気象現象
+
+12	Other options	その他の可能性
+12.1	Other threat	その他の脅威
