@@ -35,8 +35,8 @@ class Species:
         async for datum in _get(url):
             nub = datum['nubKey']
             name = datum['canonicalName']
-            break
-        return cls(nub, name)
+            return cls(nub, name)
+        
 
     async def synonyms(self):
         url = base_url / f'species/{self.nub}/synonyms'
