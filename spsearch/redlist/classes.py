@@ -117,6 +117,8 @@ class CodeHierarchySeq:
         Generator
         """
         # 自身が何のコンテナなのか判別し、ラップしているクラスを cls に代入
+        if not self._list:
+            return
         cls = self.slice(0).__class__
         i = '0'
         for obj in self:
