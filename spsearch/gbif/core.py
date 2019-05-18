@@ -33,7 +33,8 @@ class Species:
     async def from_name(cls, name: str) -> 'Species':
         url = (base_url / 'species').with_query(name=name)
         async for datum in _get(url):
-            nub = datum['nubKey']
+            # nubKey が key と一致しているときは nubKey キーは存在しない
+            nub = datum.get('nubKey') or datum['key']
             name = datum['canonicalName']
             return cls(nub, name)
         
